@@ -1,0 +1,116 @@
+{
+    "admin_navigation.thavatargallery.txt": {
+        "global_cache": false,
+        "version_id": 1000011,
+        "version_string": "1.0.0 Alpha 1",
+        "hash": "b33a705891561a1ed3925d5ae78c42b9"
+    },
+    "permission.th_avatargallery_select.txt": {
+        "global_cache": false,
+        "version_id": 1000011,
+        "version_string": "1.0.0 Alpha 1",
+        "hash": "0a78dbd8a0b542e7a04b3a6fe79b1759"
+    },
+    "permission.th_avatargallery_upload.txt": {
+        "global_cache": false,
+        "version_id": 1000011,
+        "version_string": "1.0.0 Alpha 1",
+        "hash": "fccb8760e7f574f4e6377dce16aa0ec6"
+    },
+    "permission_interface.thavagargallery.txt": {
+        "global_cache": false,
+        "version_id": 1000011,
+        "version_string": "1.0.0 Alpha 1",
+        "hash": "3e49d7f83d2607909f17fd1c7caa5cbe"
+    },
+    "th_avatargallery_sort_avatars.txt": {
+        "global_cache": false,
+        "version_id": 1000170,
+        "version_string": "1.0.1",
+        "hash": "0a12ce24b3a681525ecf80ba0f4290d5"
+    },
+    "thavatargallery_active.txt": {
+        "global_cache": false,
+        "version_id": 1000011,
+        "version_string": "1.0.0 Alpha 1",
+        "hash": "4d3d769b812b6faa6b76e1a8abaece2d"
+    },
+    "thavatargallery_add_avatar.txt": {
+        "global_cache": false,
+        "version_id": 1000011,
+        "version_string": "1.0.0 Alpha 1",
+        "hash": "ef8776205ded1e00226e06a54d53cc68"
+    },
+    "thavatargallery_add_category.txt": {
+        "global_cache": false,
+        "version_id": 1000011,
+        "version_string": "1.0.0 Alpha 1",
+        "hash": "3abd4b07c50c7ca7d319a77235f57c0d"
+    },
+    "thavatargallery_avatar_gallery.txt": {
+        "global_cache": false,
+        "version_id": 1000011,
+        "version_string": "1.0.0 Alpha 1",
+        "hash": "b33a705891561a1ed3925d5ae78c42b9"
+    },
+    "thavatargallery_avatar_options.txt": {
+        "global_cache": false,
+        "version_id": 1000011,
+        "version_string": "1.0.0 Alpha 1",
+        "hash": "29e5fcc6ea95bc143729ade1e31d8a97"
+    },
+    "thavatargallery_edit_avatar.txt": {
+        "global_cache": false,
+        "version_id": 1000011,
+        "version_string": "1.0.0 Alpha 1",
+        "hash": "5dcd2af6677bba377a9acee6c09ab373"
+    },
+    "thavatargallery_edit_category.txt": {
+        "global_cache": false,
+        "version_id": 1000011,
+        "version_string": "1.0.0 Alpha 1",
+        "hash": "31b301a8c6227ac735de084114f6fc36"
+    },
+    "thavatargallery_keep_current_avatar.txt": {
+        "global_cache": false,
+        "version_id": 1000011,
+        "version_string": "1.0.0 Alpha 1",
+        "hash": "bdda0170203b101e6b71d1501bdc1772"
+    },
+    "thavatargallery_no_avatars_in_this_category_yet.txt": {
+        "global_cache": false,
+        "version_id": 1000011,
+        "version_string": "1.0.0 Alpha 1",
+        "hash": "1de2003faa8aa4b990a6aebfbb965c4d"
+    },
+    "thavatargallery_no_avatars_yet.txt": {
+        "global_cache": false,
+        "version_id": 1000011,
+        "version_string": "1.0.0 Alpha 1",
+        "hash": "4f61ef023f1e55761d8a98ac8e05b82f"
+    },
+    "thavatargallery_pick_from_gallery.txt": {
+        "global_cache": false,
+        "version_id": 1000011,
+        "version_string": "1.0.0 Alpha 1",
+        "hash": "a31c3d1a8801003a5947b906906ceaf0"
+    },
+    "thavatargallery_please_define_a_valid_image.txt": {
+        "global_cache": false,
+        "version_id": 1000011,
+        "version_string": "1.0.0 Alpha 1",
+        "hash": "b62c5ebe86a7ad46a4ff290f66ae4de9"
+    },
+    "thavatargallery_provide_a_url.txt": {
+        "global_cache": false,
+        "version_id": 1000110,
+        "version_string": "1.0.1 Alpha",
+        "hash": "6df58a24ee9c294adc041036d2832bc3"
+    },
+    "thavatargallery_sort.txt": {
+        "global_cache": false,
+        "version_id": 1000011,
+        "version_string": "1.0.0 Alpha 1",
+        "hash": "6b46ae48421828d9973deec5fa9aa0c3"
+    }
+}

@@ -1,0 +1,1 @@
+No avatars in this category yet. <a href="{url}">Add one.</a>

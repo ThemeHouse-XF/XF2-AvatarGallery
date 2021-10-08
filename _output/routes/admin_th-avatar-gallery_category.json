@@ -1,0 +1,11 @@
+{
+    "route_type": "admin",
+    "route_prefix": "th-avatar-gallery",
+    "sub_name": "category",
+    "format": "category/:int<avatar_category_id>",
+    "build_class": "",
+    "build_method": "",
+    "controller": "ThemeHouse\\AvatarGallery:AvatarGallery",
+    "context": "thavatargallery",
+    "action_prefix": "category"
+}

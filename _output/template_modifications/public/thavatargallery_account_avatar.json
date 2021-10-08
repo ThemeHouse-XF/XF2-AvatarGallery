@@ -1,0 +1,9 @@
+{
+    "template": "account_avatar",
+    "description": "Add avatar gallery selector.",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "str_replace",
+    "find": "<xf:if is=\"$xf.options.gravatarEnable\">",
+    "replace": "<xf:include template=\"thavatargallery_avatar_gallery\" />\n$0"
+}

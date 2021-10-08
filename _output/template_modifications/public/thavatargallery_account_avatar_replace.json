@@ -1,0 +1,9 @@
+{
+    "template": "account_avatar",
+    "description": "Conditionally replace avatar upload.",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "preg_replace",
+    "find": "#<xf:radio name=\"use_custom\" id=\"useCustom\">.*</xf:radio>#sU",
+    "replace": "<xf:if is=\"$xf.visitor.canThUploadAvatar()\">\n\t$0\n\t<xf:else />\n\t<xf:radio name=\"use_custom\" id=\"useCustom\">\n\t\t<xf:option value=\"1\" selected=\"!{$xf.visitor.gravatar}\"\n\t\t\t\t   label=\"{{ phrase('thavatargallery_keep_current_avatar') }}\"\n\t\t\t\t   hint=\"{{ phrase('drag_this_image_to_crop_it_then_click_update_avatar_to_confirm') }}\">\n\t\t</xf:option>\n\t</xf:radio>\n</xf:if>"
+}

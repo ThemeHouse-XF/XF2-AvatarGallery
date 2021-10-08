@@ -1,0 +1,31 @@
+.th-avatar-gallery {
+	.inputChoices {
+		.inputChoices-choice {
+			display: inline-block;
+			
+			input + i {
+				display: none;
+			}
+			
+			input:checked ~ .iconic-label > .avatar {
+				border: 2px solid @xf-paletteColor3;
+				width: 100px;
+				height: 100px;
+				margin: -2px calc(-2px + @xf-paddingMedium) -2px -27px;
+			}
+			
+			.avatar {
+				transition: filter 250ms;
+				cursor: pointer;
+				margin-right: @xf-paddingMedium;
+				margin-left: -25px;
+			}
+		}
+	}
+}
+
+.is-disabled .th-avatar-gallery {
+	.avatar {
+		filter: grayscale(100%);
+	}
+}

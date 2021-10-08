@@ -1,0 +1,73 @@
+<xf:title>
+	<xf:if is="$avatar.isInsert()">
+		{{ phrase('thavatargallery_add_avatar') }}
+		<xf:else />
+		{{ phrase('thavatargallery_edit_avatar:') }} {$avatar.title}
+	</xf:if>
+</xf:title>
+
+<xf:form action="{{ link('th-avatar-gallery/avatar/save', $avatar) }}"
+		 upload="true" ajax="true" class="block">
+	<div class="block-container">
+		<h2 class="block-tabHeader tabs hScroller" data-xf-init="h-scroller tabs" role="tablist">
+			<span class="hScroller-scroll">
+				<a class="tabs-tab is-active" role="tab" tabindex="0" aria-controls="avatar-options">
+					{{ phrase('thavatargallery_avatar_options') }}
+				</a>
+				<xf:macro template="helper_criteria" name="user_tabs" />
+			</span>
+		</h2>
+
+		<ul class="block-body tabPanes">
+			<li class="is-active" role="tabpanel" id="avatar-options">
+				<xf:textboxrow name="title"
+							   placeholder="{{ phrase('title...') }}"
+							   label="{{ phrase('title') }}"
+							   value="{{ $avatar.isUpdate() ? $avatar.title : '' }}" />
+
+				<xf:selectrow name="avatar_category_id" value="{$avatar.avatar_category_id}"
+							  label="{{ phrase('category') }}">
+					<xf:foreach loop="$categories" value="$category">
+						<xf:option value="{$category.avatar_category_id}">{$category.title}</xf:option>
+					</xf:foreach>
+				</xf:selectrow>
+
+				<hr class="formRowSep" />
+
+				<xf:if is="$avatar.isUpdate()">
+					<xf:formrow label="{{ phrase('current_avatar') }}">
+						{{ th_avatar_gallery_avatar($avatar, 's') }}
+					</xf:formrow>
+				</xf:if>
+
+				<xf:radiorow name="{{ phrase('file') }}">
+					<xf:option value="upload" selected="{{ !$avatar.avatar_url }}"
+								   label="{{ phrase('upload_avatar') }}">
+						<xf:upload name="upload" accept=".gif,.jpeg,.jpg,.jpe,.png" />
+					</xf:option>
+					<xf:option value="url" selected="{{ $avatar.avatar_url }}"
+							   label="{{ phrase('thavatargallery_provide_a_url') }}">
+						<xf:textbox name="avatar_url" value="{$avatar.avatar_url}" />
+					</xf:option>
+				</xf:radiorow>
+
+				<hr class="formRowSep" />
+
+				<xf:numberboxrow name="display_order"
+								 label="{{ phrase('display_order') }}"
+								 value="{$avatar.display_order}" />
+
+				<xf:checkboxrow>
+					<xf:option name="active" checked="{$avatar.active}">
+						{{ phrase('thavatargallery_active') }}
+					</xf:option>
+				</xf:checkboxrow>
+			</li>
+
+			<xf:macro template="helper_criteria" name="user_panes"
+					  arg-criteria="{{ $userCriteria.getCriteriaForTemplate() }}"
+					  arg-data="{{ $userCriteria.getExtraTemplateData() }}" />
+		</ul>
+		<xf:submitrow icon="submit" />
+	</div>
+</xf:form>

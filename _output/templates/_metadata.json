@@ -1,0 +1,32 @@
+{
+    "admin/th_avatar_gallery_avatar_edit.html": {
+        "version_id": 1000110,
+        "version_string": "1.0.1 Alpha",
+        "hash": "b4864d32c108e88299bf11db0183ff55"
+    },
+    "admin/th_avatar_gallery_avatar_sort.html": {
+        "version_id": 1000170,
+        "version_string": "1.0.1",
+        "hash": "50e7b182a5c0166ec210fbf93f74887a"
+    },
+    "admin/th_avatar_gallery_category_edit.html": {
+        "version_id": 1000011,
+        "version_string": "1.0.0 Alpha 1",
+        "hash": "0d56834d2b736bfdd1233eac0937d5ce"
+    },
+    "admin/th_avatar_gallery_list.html": {
+        "version_id": 1000170,
+        "version_string": "1.0.1",
+        "hash": "cf220d48b659e12af3fcfca63a809608"
+    },
+    "public/thavatargallery_avatar_gallery.html": {
+        "version_id": 1000110,
+        "version_string": "1.0.1 Alpha",
+        "hash": "07e2ffcb6a644b9692bf512518d4398a"
+    },
+    "public/thavatargallery_avatar_gallery.less": {
+        "version_id": 1000011,
+        "version_string": "1.0.0 Alpha 1",
+        "hash": "0ad6ba22c11591549cc32af4c2e14011"
+    }
+}

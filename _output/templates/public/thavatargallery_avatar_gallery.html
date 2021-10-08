@@ -1,0 +1,31 @@
+<xf:if is="$thGalleryAvatars is not empty && $xf.visitor.canThSelectAvatarFromGallery()">
+	<li class="block-row block-row--separated avatarControl">
+		<div class="avatarControl-inputs">
+			<xf:radio name="use_custom">
+				<xf:option value="th_avatar_gallery" label="{{ phrase('thavatargallery_pick_from_gallery') }}"
+						   selected="{$xf.visitor.thag_avatar_id}">
+					<xf:dependent>
+						<div class="th-avatar-gallery">
+							<xf:foreach loop="$thGalleryCategories" value="$category" key="$categoryId">
+								<xf:if is="$thGalleryCategories.count() > 1">
+									<label clas="th-avatar-gallery--title">{$category.title}</label>
+								</xf:if>
+
+								<xf:radio name="th_avatar_gallery_avatar_id" value="{$category.avatar_category_id}"
+										  selected="{{ $xf.visitor.THAvatar.avatar_category_id == $category.avatar_category_id }}">
+									<xf:foreach loop="{$thGalleryAvatars.{$categoryId}}" value="$avatar">
+										<xf:option value="{$avatar.avatar_id}"
+												   selected="{{ $xf.visitor.thag_avatar_id == $avatar.avatar_id }}">
+											{{ th_avatar_gallery_avatar($avatar, 'm') }}
+										</xf:option>
+									</xf:foreach>
+								</xf:radio>
+							</xf:foreach>
+						</div>
+					</xf:dependent>
+				</xf:option>
+			</xf:radio>
+		</div>
+	</li>
+	<xf:css src="thavatargallery_avatar_gallery.less" />
+</xf:if>

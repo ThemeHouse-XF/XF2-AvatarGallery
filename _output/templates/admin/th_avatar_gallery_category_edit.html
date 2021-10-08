@@ -1,0 +1,32 @@
+<xf:title>
+	<xf:if is="$category.isInsert()">
+		{{ phrase('thavatargallery_add_category') }}
+		<xf:else />
+		{{ phrase('thavatargallery_edit_category:') }} {$category.title}
+	</xf:if>
+</xf:title>
+
+<xf:form action="{{ link('th-avatar-gallery/category/save', $category) }}"
+		 class="block" ajax="true">
+	<div class="block-container">
+		<div class="block-body">
+			<xf:textboxrow name="title"
+						   placeholder="{{ phrase('title...') }}"
+						   label="{{ phrase('title') }}"
+						   value="{{ $category.isUpdate() ? $category.title : '' }}" />
+			
+			<hr class="formRowSep" />
+			
+			<xf:numberboxrow name="display_order"
+							 label="{{ phrase('display_order') }}"
+							 value="{$category.display_order}" />
+			
+			<xf:checkboxrow>
+				<xf:option name="active" checked="{$category.active}">
+					{{ phrase('thavatargallery_active') }}
+				</xf:option>
+			</xf:checkboxrow>
+		</div>
+		<xf:submitrow icon="submit" />
+	</div>
+</xf:form>

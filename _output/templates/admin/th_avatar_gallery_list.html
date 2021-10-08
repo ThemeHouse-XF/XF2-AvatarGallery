@@ -1,0 +1,76 @@
+<xf:title>
+	{{ phrase('thavatargallery_avatar_gallery') }}
+</xf:title>
+
+<xf:pageaction>
+	<div class="buttonGroup">
+		<xf:button icon="add"
+				   href="{{ link('th-avatar-gallery/category/add') }}">
+			{{ phrase('thavatargallery_add_category') }}
+		</xf:button>
+		<xf:button icon="add"
+				   href="{{ link('th-avatar-gallery/avatar/add') }}">
+			{{ phrase('thavatargallery_add_avatar') }}
+		</xf:button>
+		<xf:button icon="sort"
+				   href="{{ link('th-avatar-gallery/sort') }}">
+			{{ phrase('thavatargallery_sort') }}
+		</xf:button>
+	</div>
+</xf:pageaction>
+
+<xf:form class="block" action="{{ link('th-avatar-gallery/avatar/toggle') }}" ajax="true">
+	<div class="block-container">
+		<xf:if is="$avatars is not empty or $categories is not empty">
+			<div class="block-body">
+				<xf:datalist>
+					<xf:foreach loop="$categories" key="$categoryId" value="$category">
+						<xf:datarow rowtype="subsection">
+							<xf:cell href="{{ link('th-avatar-gallery/category/edit', $category) }}"
+									 colspan="3">
+								{$category.title}
+							</xf:cell>
+							<xf:if is="$category.canDelete()">
+								<xf:delete href="{{ link('th-avatar-gallery/category/delete', $category) }}" />
+								<xf:else />
+								<xf:cell class="dataList-cell dataList-cell--iconic
+												dataList-cell--alt dataList-cell--action">
+								</xf:cell>
+							</xf:if>
+						</xf:datarow>
+						<xf:if is="{$avatars.{$categoryId}} is not empty">
+							<xf:foreach loop="{$avatars.{$categoryId}}" value="$avatar">
+								<xf:datarow>
+									<xf:cell class="dataList-cell--min"
+											 href="{{ link('th-avatar-gallery/avatar/edit', $avatar) }}">
+										{{ th_avatar_gallery_avatar($avatar, 'xs') }}
+									</xf:cell>
+									<xf:cell href="{{ link('th-avatar-gallery/avatar/edit', $avatar) }}">
+										{$avatar.title}
+									</xf:cell>
+									<xf:toggle name="active[{$avatar.avatar_id}]" selected="$avatar.active"
+											   class="dataList-cell--separated" submit="true"
+											   tooltip="{{ phrase('enable_disable_x', {'title': $avatar.title}) }}" />
+									<xf:delete href="{{ link('th-avatar-gallery/avatar/delete', $avatar) }}" />
+								</xf:datarow>
+							</xf:foreach>
+							<xf:else />
+							<xf:datarow>
+								<xf:cell colspan="3">
+									{{
+									phrase('thavatargallery_no_avatars_in_this_category_yet',
+									{'url': link('th-avatar-gallery/avatar/add', null, {'category': $categoryId})})
+									}}
+								</xf:cell>
+							</xf:datarow>
+						</xf:if>
+					</xf:foreach>
+				</xf:datalist>
+			</div>
+			<xf:else />
+			<div class="block-row">
+				{{ phrase('thavatargallery_no_avatars_yet') }}
+			</div>
+		</xf:if>
+	</div>
+</xf:form>

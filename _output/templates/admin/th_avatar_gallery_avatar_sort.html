@@ -1,0 +1,33 @@
+<xf:title>{{ phrase('th_avatargallery_sort_avatars') }}</xf:title>
+
+<xf:macro template="public:nestable_macros" name="setup" />
+
+<xf:form action="{{ link('th-avatar-gallery/sort') }}" class="block" ajax="true">
+	<div class="block-container">
+		<xf:foreach loop="$categories" key="$categoryId" value="$category">
+			<xf:if is="{{ $category > 0 }}">
+				<h4 class="block-minorHeader">{$category.title}</h4>
+			<xf:else />
+				<h4 class="block-minorHeader">{{ phrase('smilie_category_title.uncategorized') }}</h4>
+			</xf:if>
+			<div class="block-body">
+				<div class="nestable-container" data-xf-init="nestable" data-parent-id="{$categoryId}" data-max-depth="1" data-value-target=".js-avatarData">
+					<xf:if contentcheck="true">
+						<ol class="nestable-list">
+							<xf:contentcheck>
+							<xf:foreach loop="{$avatars.{$categoryId}}" key="$avatarId" value="$avatar" i="$i">
+								<li class="nestable-item" data-id="{$avatarId}">
+									<div class="nestable-handle nestable-handle--full" aria-label="{{ phrase('drag_handle')|for_attr }}"><xf:fa icon="fa-bars" /></div>
+									<div class="nestable-content">{$avatar.title}</div>
+								</li>
+							</xf:foreach>
+							</xf:contentcheck>
+						</ol>
+					</xf:if>
+					<xf:hiddenval name="avatars[]" value="" class="js-avatarData" />
+				</div>
+			</div>
+		</xf:foreach>
+		<xf:submitrow icon="save" rowtype="simple" />
+	</div>
+</xf:form>
